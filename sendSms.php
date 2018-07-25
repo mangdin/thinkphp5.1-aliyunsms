@@ -7,7 +7,7 @@
  * 2017/11/30
  */
 
-namespace aliyun\dysms;
+namespace mangdin\alidysms;
 
 use think\facade\Config;
 
