@@ -1,6 +1,6 @@
 <?php
 
-namespace aliyun\dysms;
+namespace mangdin\alidysms;
 
 /**
  * 签名助手 2017/11/19
