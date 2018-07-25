@@ -20,7 +20,7 @@ thinkphp5.1 阿里云 大于短信
         $sendsms = new \mangdin\alidysms\sendSms();
         $msg = json_decode($sendsms->sendsms($mobile, $signname, $templatecode, $templateparam),true);
         if ($msg['Code'] == 'OK'){
-            Session::set('smscode',$templateparam['code']);
+            \think\facade\Session::set('smscode',$templateparam['code']);
             return json(['code'=>200,'icon'=>6,'msg'=>'发送成功']);
         }else{
             return json(['code'=>500,'icon'=>5,'msg'=>$msg['Message']]);
