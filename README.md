@@ -21,15 +21,11 @@ thinkphp5.1 阿里云 大于短信
         $msg = json_decode($sendsms->sendsms($mobile, $signname, $templatecode, $templateparam),true);
         if ($msg['Code'] == 'OK'){
             Session::set('smscode',$templateparam['code']);
-            SmslogModel::create(array(
-                'uid'=>  0,
-                'mobile' => $mobile,
-                'content' => $templateparam['code'],
-                'addtime' => time()
-            ));
             return json(['code'=>200,'icon'=>6,'msg'=>'发送成功']);
         }else{
             return json(['code'=>500,'icon'=>5,'msg'=>$msg['Message']]);
         }
     }
     </pre>
+
+可以放到公共函数全局调用
